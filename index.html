@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script type="text/javascript" src="../JS/Common.js"></script>
+    <script type="text/javascript" src="../JS/myRequest.js"></script>
+    <script type="text/javascript">
+        var ac = new (window.AudioContext || window.webkitAudioContext)();
+        var scope, elAudio;
+        loadScriptSynchronous("lang/" + getLanguageCode() + ".js");
+    </script>
+
+    <!--Tree-->
+    <link rel="stylesheet" href="../TreeElement/myTreeView.css" type="text/css">
+    <script type="text/javascript" src="../TreeElement/myTreeView.js"></script>
+
+</head>
+<body>
+
+    <!--script Test-->
+    <div id='ScriptProblem' style='background: white; '><FONT style='color: red; background-color: white'>WARNING: Active Scripting in your internet browser is disabled. Refresh your Web page to find out the current status of your Web page or enable Active Scripting.</FONT></div>
+    <script type='text/javascript'>scriptTest();</script>
+
+    <h1 id="pageHeader" align="center"></h1>
+    <script type="text/javascript">
+        document.getElementById('pageHeader').innerHTML = lang.pageHeader;//'Audio Synthesizer'
+        document.head.querySelector('title').innerHTML = lang.pageHeader;//'Audio Synthesizer'
+    </script>
+
+    <!--keyboard-->
+    <div>
+        <span draggable="true"></span><!-- https://www.html5rocks.com/ru/tutorials/dnd/basics/-->
+        <span id="keyboardTree"></span>
+        <div id="keyboard" style="display:none"><div class="synzer"></div><div id="toneControlsTree"></div></div>
+    </div>
+    
+    <script type="text/javascript">
+        document.getElementById("keyboardTree").appendChild(myTreeView.createBranch( {
+            name: lang.keyboardTree,
+            params: {
+                animate: true,
+                noBranchLeft: true,
+                createBranch: function () {
+                    loadScriptSynchronous("Keyboard.js");
+                    return document.querySelector('#keyboard');
+                },
+                remember: "keyboard"
+            },
+            tagName: "span"
+        }));
+    </script>
+
+    <!--Scope-->
+    <div>
+        <span draggable="true"></span>
+        <span id="scopeTree"></span>
+    </div>
+    <script type="text/javascript">
+        myTreeView.createTree(
+            "scopeTree", [{
+                name: lang.scope,//'Scope'
+                branch: function () {
+                    loadScript("scope/scope.js");
+                    var el = document.createElement("div");
+                    el.innerHTML = getSynchronousResponse('scope/scope.html');
+                    return el;
+                },
+                onOpenBranch: function (a) { if (scope != undefined) scope.start(); },
+                onCloseBranch: function (a) { scope.stop(); },
+                animate: true,
+                remember: "Scope",
+                tagName: "span"
+        }]);
+    </script>
+
+    <!--Audio player-->
+    <div>
+        <span draggable="true"></span>
+        <span id="audioPlayerTree"></span>
+        <div id="audioPlayer" style="display:none"><audio controls></audio><span class="audioFile"></span></div>
+    </div>
+    <script type="text/javascript">
+        myTreeView.createTree(
+            "audioPlayerTree", [{
+                name: lang.audioPlayer,//'Audio Player'
+                branch: function () {
+                    var el = document.getElementById('audioPlayer');
+
+                    elAudio = el.querySelector('audio');
+                    elAudio.onloadedmetadata = function () { el.querySelector('.audioFile').innerHTML = this.src; };
+                    elAudio.src = 'DST-Canopy.mp3';
+                    if (scope != undefined)
+                        loadScript("../ScopeKevincennis/Scope/src/MediaElementAudio.js",//"../../audioSynthesizer/Scope/ScopeKevincennis/Scope/src/MediaElementAudio.js",
+                            function () { MediaElementAudio.Scope(elAudio, ac, scope); });
+
+//                    el.style.display = "block";
+                    return el;
+                },
+                animate: true,
+                remember: "audioPlayer",
+                tagName: "span"
+        }]
+         );
+    </script>
+
+    <!--draggable-->
+    <script type="text/javascript" src="../draggable/draggable.js"></script>
+    <script type="text/javascript"> draggable.create();</script>
+
+</body>
+</html>

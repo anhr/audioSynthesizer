@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="css">
+      <UniqueIdentifier>{5acec6ff-6acd-4f4c-93a0-5725523b0832}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lang">
+      <UniqueIdentifier>{7738189b-7c9a-4376-adc2-117a462c5afa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="toneControls">
+      <UniqueIdentifier>{b91bb0ae-ecd2-445e-b04d-9ef7613b9815}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="toneControls\lang">
+      <UniqueIdentifier>{334fbefc-880a-4627-8a7d-31372589b7bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scope">
+      <UniqueIdentifier>{6d9c7f4a-cf97-40a8-8709-a7ba0de3e814}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="index.html" />
+    <None Include="css\keyboard.css">
+      <Filter>css</Filter>
+    </None>
+    <None Include="css\page.css">
+      <Filter>css</Filter>
+    </None>
+    <None Include="Keyboard.js" />
+    <None Include="lang\en.js">
+      <Filter>lang</Filter>
+    </None>
+    <None Include="lang\ru.js">
+      <Filter>lang</Filter>
+    </None>
+    <None Include="toneControls\toneControls.html">
+      <Filter>toneControls</Filter>
+    </None>
+    <None Include="toneControls\toneControls.js">
+      <Filter>toneControls</Filter>
+    </None>
+    <None Include="toneControls\lang\en.js">
+      <Filter>toneControls\lang</Filter>
+    </None>
+    <None Include="toneControls\lang\ru.js">
+      <Filter>toneControls\lang</Filter>
+    </None>
+    <None Include="scope\scope.js">
+      <Filter>scope</Filter>
+    </None>
+    <None Include="scope\scope.html">
+      <Filter>scope</Filter>
+    </None>
+  </ItemGroup>
+</Project>

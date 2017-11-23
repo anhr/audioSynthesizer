@@ -1,0 +1,9 @@
+.synzer {
+	/*
+	border: 2px solid red;
+	*/
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+}

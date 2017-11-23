@@ -1,0 +1,94 @@
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+
+.controls {
+  width: 790px;
+  font-family: 'Indie Flower';
+  font-size: 22px;
+}
+
+.col2-container, .col3-container, .col5-container, .col6-container {
+  display: inline-block;
+  margin-top: 10px;
+  text-align: right;
+  vertical-align: top;
+}
+
+.col2-container {
+  width: 100px;
+}
+
+.col3-container {
+  width: 150px;
+}
+
+.col5-container {
+  width: 250px;
+}
+
+.col6-container {
+  width: 300px;
+}
+
+
+
+.adsr-image {
+  width: 120px;
+  height: 90px;
+}
+
+.wave-form {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+}
+
+.wave-form .img {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-size: 100%;
+}
+
+.sine .img {
+  background-image: url(../img/sine.png);
+}
+
+.square .img {
+  background-image: url(../img/square.png);
+}
+
+.sawtooth .img {
+  background-image: url(../img/sawtooth.png);
+}
+
+[type="number"] {
+  width: 45px;
+  padding: 5px;
+  border: 0;
+  background: url(../img/input.png) 50% 50% no-repeat;
+  background-size: 100%;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+/* hide outline on focus */
+input[type=text]:focus,
+input[type=number]:focus {
+  outline: none;
+}
+
+/* hide radio input, not for wave-form inputs, yet */
+label:not(.wave-form) input[type=radio] {
+  opacity: 0; /* display:none breaks all */
+}
+
+label span {
+  cursor: pointer;
+}
+
+label:not(.wave-form) input[type=radio]:checked + span {
+  font-weight: bold;
+}
