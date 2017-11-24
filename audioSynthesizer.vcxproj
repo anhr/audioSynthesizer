@@ -124,6 +124,8 @@
     <None Include="Keyboard.js" />
     <None Include="lang\en.js" />
     <None Include="lang\ru.js" />
+    <None Include="LICENSE" />
+    <None Include="README.md" />
     <None Include="scope\scope.html" />
     <None Include="scope\scope.js" />
     <None Include="toneControls\lang\en.js" />
