@@ -16,7 +16,7 @@
  *
  */
 
-loadScript("../Scope/src/scope.js",//"../../audioSynthesizer/Scope/ScopeKevincennis/Scope/src/scope.js",
+loadScript("../Scope/src/Scope.js",//"../../audioSynthesizer/Scope/ScopeKevincennis/Scope/src/scope.js",
     function () {
         var canvas = document.querySelector('#osc'),
           osc,// = ac.createOscillator(),
