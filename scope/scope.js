@@ -87,9 +87,10 @@ loadScript("../Scope/src/Scope.js",//"../../audioSynthesizer/Scope/ScopeKevincen
             else alert('Microphone access not supported by your browser. Try Chrome');
         }
 
-        if (elAudio != undefined) {
-            loadScript("../ScopeKevincennis/Scope/src/MediaElementAudio.js",//"../../audioSynthesizer/Scope/ScopeKevincennis/Scope/src/MediaElementAudio.js",
-                function () { MediaElementAudio.Play(elAudio, ac, scope); });
-        }
+        if (elAudio != undefined) loadMediaElementAudio();
     }
 );
+function loadMediaElementAudio() {
+    loadScript("../Scope/src/MediaElementAudio.js",//"../../audioSynthesizer/Scope/ScopeKevincennis/Scope/src/MediaElementAudio.js",
+        function () { MediaElementAudio.Play(elAudio, ac, scope); });
+}

@@ -17,7 +17,7 @@
     <script type="text/javascript" src="../TreeElement/myTreeView.js"></script>
 
 </head>
-<body>111
+<body>
 
     <!--script Test-->
     <div id='ScriptProblem' style='background: white; '><FONT style='color: red; background-color: white'>WARNING: Active Scripting in your internet browser is disabled. Refresh your Web page to find out the current status of your Web page or enable Active Scripting.</FONT></div>
@@ -25,7 +25,7 @@
 
     <h1 id="pageHeader" align="center"></h1>
     <script type="text/javascript">
-        document.getElementById('pageHeader').innerHTML = lang.pageHeader;//'Audio Synthesizer'
+        document.getElementById('pageHeader').innerHTML = lang.pageHeader + '(UNDER CONSTRACTION)';//'Audio Synthesizer'
         document.head.querySelector('title').innerHTML = lang.pageHeader;//'Audio Synthesizer'
     </script>
 
@@ -91,11 +91,7 @@
                     elAudio = el.querySelector('audio');
                     elAudio.onloadedmetadata = function () { el.querySelector('.audioFile').innerHTML = this.src; };
                     elAudio.src = 'DST-Canopy.mp3';
-                    if (scope != undefined)
-                        loadScript("../ScopeKevincennis/Scope/src/MediaElementAudio.js",//"../../audioSynthesizer/Scope/ScopeKevincennis/Scope/src/MediaElementAudio.js",
-                            function () { MediaElementAudio.Scope(elAudio, ac, scope); });
-
-//                    el.style.display = "block";
+                    if (scope != undefined) loadMediaElementAudio();
                     return el;
                 },
                 animate: true,
